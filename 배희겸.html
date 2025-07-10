@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LE & FLEUR</title>
+  <link rel="stylesheet" href="배희겸.css" />
+</head>
+<body>
+
+  <canvas id="flowerCanvas"></canvas>
+
+  <header>
+    <h1>LE & FLEUR</h1>
+    <p>“Il y a des fleurs partout<br>pour qui veut bien les voir.”</p>
+    <button id="darkModeToggle">🌙 다크모드</button>
+    <button onclick="openLogin()">로그인</button>  
+  </header>
+
+  <nav>
+    <a href="#">홈</a>
+    <a href="배희겸2.html">상품</a>
+    <a href="#">이벤트</a>
+    <a href="#">문의하기</a>
+  </nav>
+
+  <section class="hero">
+    <img src="main.jpg" alt="꽃집 메인 배너 이미지" />
+    <button onclick="showCoupon()">쿠폰 받기</button>
+    <button onclick="showRandomFlower()">꽃말 보기</button>
+    <h4>회원 가입 시 일정 금액 할인 쿠폰 지급</h4>
+  </section>
+
+  <section class="section" id="eventSection">
+    <h2>LE&FLEUR + 회원 이벤트</h2>
+    <div class="event-text fade-in">
+      <p>지금 회원가입하면 쿠폰도 드려요!</p>
+      <button class="signup-button" onclick="openSignup()">회원가입 이벤트 참여</button>
+    </div>
+  </section>
+
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <h3>회원가입</h3>
+      <form id="signupForm">
+        <input type="text" placeholder="이름" required>
+        <input type="email" placeholder="이메일" required>
+        <input type="password" placeholder="비밀번호" required>
+        <input type="password" placeholder="비밀번호 확인" required>
+        <button type="submit">가입하기</button>
+        <button type="button" onclick="closeSignup()">닫기</button>
+      </form>
+    </div>
+  </div>
+
+  <section class="section fade-in">
+    <h2>인기 상품</h2>
+    <div class="products">
+      <div class="product">
+        <img src="rose.jpg" alt="Velours de Rose (벨벳처럼 부드러운 장미의 속삭임)" />
+        <h3>Velours de Rose</h3>
+        <p class="description">(벨벳처럼 부드러운 장미의 속삭임)</p>
+        <p>₩35,000</p>
+      </div>
+      <div class="product">
+        <img src="tulip.jpg" alt="Jardin de Rêve (꿈꾸는 정원, 그 속의 튤립들)" />
+        <h3>Jardin de Rêve</h3>
+        <p class="description">(꿈꾸는 정원, 그 속의 튤립들)</p>
+        <p>₩28,000</p>
+      </div>
+      <div class="product">
+        <img src="congratuation.jpg" alt="Fête Florale (축하의 감정을 꽃으로 전하다)" />
+        <h3>Fête Florale</h3>
+        <p class="description">(축하의 감정을 꽃으로 전하다)</p>
+        <p>₩42,000</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-in">
+    <h2>특별 이벤트</h2>
+    <img src="banner.jpg" alt="이벤트 이미지" class="event-banner" />
+    <p class="event-text">6월 한 달간 구매 고객 전원에게 무료 배송 쿠폰 제공!</p>
+  </section>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <h3>로그인</h3>
+      <form id="loginForm">
+        <input type="email" placeholder="이메일" required />
+        <input type="password" placeholder="비밀번호" required />
+        <button type="submit">로그인</button>
+        <button type="button" onclick="closeLogin()">닫기</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="couponModal" class="modal">
+    <div class="modal-content">
+      <h3>🎁 무료 배송 쿠폰!</h3>
+      <p>지금 구매하시면 자동 적용됩니다.<br />감사합니다 :)</p>
+      <button onclick="closeCoupon()">닫기</button>
+    </div>
+  </div>
+
+  <div id="flowerModal" class="modal">
+    <div class="modal-content">
+      <h3>오늘의 꽃말</h3>
+      <p id="flowerMessage"></p>
+      <button onclick="closeFlower()">닫기</button>
+    </div>
+  </div>
+
+  <script src="배희겸.js"></script>
+</body>
+</html>
